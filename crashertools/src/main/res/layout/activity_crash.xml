@@ -21,7 +21,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:background="?topBackgroundColor"
             android:orientation="vertical"
             app:layout_scrollFlags="scroll">
 
@@ -93,6 +93,7 @@
                     android:layout_margin="4dp"
                     android:layout_weight="1"
                     android:text="@string/title_crasher_copy"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:textAppearance="@style/TextAppearance.AppCompat.Button"
                     android:textSize="16sp"
                     app:cornerRadius="@dimen/cornerRadius" />
@@ -104,6 +105,7 @@
                     android:layout_margin="4dp"
                     android:layout_weight="1"
                     android:text="@string/title_crasher_share"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:textAppearance="@style/TextAppearance.AppCompat.Button"
                     android:textSize="16sp"
                     app:cornerRadius="@dimen/cornerRadius" />
@@ -115,6 +117,7 @@
                     android:layout_margin="4dp"
                     android:layout_weight="1"
                     android:text="@string/title_crasher_email"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:textAppearance="@style/TextAppearance.AppCompat.Button"
                     android:textSize="16sp"
                     app:cornerRadius="@dimen/cornerRadius" />
@@ -163,7 +166,7 @@
             </LinearLayout>
 
             <HorizontalScrollView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clipToPadding="false"
                 android:paddingLeft="16dp"
@@ -178,6 +181,56 @@
                     android:textColor="?android:textColorSecondary"
                     android:textSize="14sp"
                     android:visibility="gone" />
+
+            </HorizontalScrollView>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorDivider" />
+
+            <LinearLayout
+                android:id="@+id/deviceHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp"
+                android:paddingTop="8dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@string/device"
+                    android:textColor="?android:textColorPrimary"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingLeft="16dp"
+                android:paddingTop="8dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:id="@+id/device"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="?android:textColorSecondary"
+                    android:textSize="14sp"
+                    android:visibility="visible" />
 
             </HorizontalScrollView>
 

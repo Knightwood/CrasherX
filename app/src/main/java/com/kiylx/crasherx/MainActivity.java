@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity  implements Crasher.OnCrashL
         setContentView(R.layout.activity_main);
         crasher = new Crasher(this)
                 .addListener(this)
-                .setEmail("18jafenn90@gmail.com");
+                .setEmail("kiylx@outlook.com");
 
         stackOverflowSwitch = findViewById(R.id.stackOverflow);
         crashActivitySwitch = findViewById(R.id.crashActivity);

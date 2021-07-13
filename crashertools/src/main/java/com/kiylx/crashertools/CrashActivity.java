@@ -46,6 +46,8 @@ public class CrashActivity extends AppCompatActivity implements View.OnClickList
     private TextView stackTrace;
 
     private String body;
+    private TextView deviceInfo;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -62,6 +64,8 @@ public class CrashActivity extends AppCompatActivity implements View.OnClickList
         stackTraceHeader = findViewById(R.id.stackTraceHeader);
         stackTraceArrow = findViewById(R.id.stackTraceArrow);
         stackTrace = findViewById(R.id.stackTrace);
+
+        deviceInfo = findViewById(R.id.device);
 
         setSupportActionBar(toolbar);
         actionBar = getSupportActionBar();
@@ -92,7 +96,7 @@ public class CrashActivity extends AppCompatActivity implements View.OnClickList
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setTitle(String.format(Locale.getDefault(), getString(R.string.title_crasher_crashed), getString(R.string.app_name)));
             //actionBar.setHomeAsUpIndicator(ImageUtils.getVectorDrawable(this, R.drawable.ic_crasher_back, isColorDark ? Color.WHITE : Color.BLACK));
-            actionBar.setHomeAsUpIndicator(ImageUtils.getVectorDrawable(this, R.drawable.ic_crasher_back, Color.WHITE ));
+            actionBar.setHomeAsUpIndicator(ImageUtils.getVectorDrawable(this, R.drawable.ic_crasher_back, Color.WHITE));
         }
 
         /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -118,11 +122,14 @@ public class CrashActivity extends AppCompatActivity implements View.OnClickList
         if (BuildConfig.DEBUG)
             stackTraceHeader.callOnClick();
 
-        body = nameString + "\n" + (messageString != null ? messageString : "") + "\n\n" + stack
-                + "\n\nAndroid Version: " + Build.VERSION.SDK_INT
-                + "\nDevice Manufacturer: " + Build.MANUFACTURER
-                + "\nDevice Model: " + Build.MODEL
-                + "\n\n" + (getIntent().hasExtra(EXTRA_DEBUG_MESSAGE) ? getIntent().getStringExtra(EXTRA_DEBUG_MESSAGE) : "");
+        String deviceText =
+                "Android Version: " + Build.VERSION.SDK_INT
+                        + "\nDevice Manufacturer: " + Build.MANUFACTURER
+                        + "\nDevice Model: " + Build.MODEL
+                        + "\n\n" + (getIntent().hasExtra(EXTRA_DEBUG_MESSAGE) ? getIntent().getStringExtra(EXTRA_DEBUG_MESSAGE) : "");
+        body = nameString + "\n\n" +deviceText;
+
+        deviceInfo.setText(deviceText);
     }
 
     @Override
@@ -142,7 +149,7 @@ public class CrashActivity extends AppCompatActivity implements View.OnClickList
                 ((android.content.ClipboardManager) service).setPrimaryClip(ClipData.newPlainText(name.getText().toString(), stackTrace.getText().toString()));
             else if (service instanceof android.text.ClipboardManager)
                 ((android.text.ClipboardManager) service).setText(stackTrace.getText().toString());
-            Toast.makeText(this,getString(R.string.has_copied_text),Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.has_copied_text), Toast.LENGTH_SHORT).show();
         } else if (v.getId() == R.id.share) {
             Intent intent = new Intent(Intent.ACTION_SEND);
             intent.setType("text/plain");
@@ -151,7 +158,8 @@ public class CrashActivity extends AppCompatActivity implements View.OnClickList
             startActivity(Intent.createChooser(intent, getString(R.string.title_crasher_share)));
         } else if (v.getId() == R.id.email) {
             Intent intent = new Intent(Intent.ACTION_SENDTO);
-            intent.setDataAndType(Uri.parse("mailto:" + getIntent().getStringExtra(EXTRA_EMAIL)),"text/plain");
+            //intent.setType("text/plain");
+            intent.setData(Uri.parse("mailto:" + getIntent().getStringExtra(EXTRA_EMAIL)));
             intent.putExtra(Intent.EXTRA_EMAIL, getIntent().getStringExtra(EXTRA_EMAIL));
             intent.putExtra(Intent.EXTRA_SUBJECT, String.format(Locale.getDefault(), getString(R.string.title_crasher_exception), name.getText().toString(), getString(R.string.app_name)));
             intent.putExtra(Intent.EXTRA_TEXT, body);

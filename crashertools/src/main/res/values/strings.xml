@@ -16,5 +16,6 @@
     <string name="title_crasher_send_email">Send Email</string>
     <string name="title_crasher_stack_trace">Stack Trace</string>
     <string name="has_copied_text">Has Copied Text</string>
+    <string name="device">Device Info</string>
 
 </resources>
