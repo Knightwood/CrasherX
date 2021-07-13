@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CrasherX</string>
+    <string name="title_crasher_crashed">%1$s Crashed</string>
+    <string name="title_crasher_exception">%1$s in %2$s</string>
+    <string name="title_crasher_crash_notification">%1$s crashed: %2$s at %3$s</string>
+    <string name="title_crasher_crash_notifications">错误信息</string>
+
+    <string name="msg_crasher_crashed">Unfortunately, %1$s 已停止工作。 您可以使用下面的按钮将此报告为错误，也可以尝试自行修复。 报告错误时，请包含尽可能多的详细信息，以帮助尽快解决问题。 请注意，您的设备信息，例如制造商和型号，可能包含在错误报告中.</string>
+    <string name="msg_crasher_crash_notification">单击以提交错误报告.</string>
+
+    <string name="title_crasher_copy">复制</string>
+    <string name="title_crasher_share">分享</string>
+    <string name="title_crasher_email">邮件</string>
+    <string name="title_crasher_send_email">发送邮件</string>
+    <string name="title_crasher_stack_trace">Stack Trace</string>
+    <string name="has_copied_text">已复制</string>
+</resources>

@@ -1,0 +1,3 @@
+rootProject.name = "CrasherX"
+include ':app'
+include ':crashertools'
