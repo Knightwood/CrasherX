@@ -1,10 +1,4 @@
- 此项目修改自`https://github.com/fennifith/Crasher`，改进界面，更Material。
-
-去除改变颜色功能，改进主题界面，添加基本的设备信息显示，第三方button库和其他一些组件替换为material组件。
-
-！！！项目目前仍在修改中。
-
-## 使用（目前不可用）
+## 使用
 
 ```gradle
 1. 在根build.gradle文件中添加:
@@ -16,9 +10,9 @@ allprojects {
 		}
 	}
   
-2. 添加依赖
+2. 添加依赖 Tag: [![](https://jitpack.io/v/Knightwood/crasherx.svg)](https://jitpack.io/#Knightwood/crasherx)
   dependencies {
-		implementation 'com.github.Knightwood:crasherx:dev-1.0'
+		implementation 'com.github.Knightwood:crasherx:Tag'
 	}
 ```
 
