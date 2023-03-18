@@ -11,11 +11,11 @@ allprojects {
 	}
 ```
   
-2. 添加依赖 Tag: [![](https://jitpack.io/v/Knightwood/crasherx.svg)](https://jitpack.io/#Knightwood/crasherx)
+2. 添加依赖 Tag: [![](https://jitpack.io/v/Knightwood/CrasherX.svg)](https://jitpack.io/#Knightwood/CrasherX)
 
 ```
   dependencies {
-		implementation 'com.github.Knightwood:crasherx:Tag'
+		implementation 'com.github.Knightwood:CrasherX:Tag'
 	}
 ```
 
