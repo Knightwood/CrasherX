@@ -1,16 +1,19 @@
 ## 使用
 
-```gradle
+gradle
 1. 在根build.gradle文件中添加:
- 
+ ```
 allprojects {
 		repositories {
 			...
 			maven { url 'https://jitpack.io' }
 		}
 	}
+```
   
 2. 添加依赖 Tag: [![](https://jitpack.io/v/Knightwood/crasherx.svg)](https://jitpack.io/#Knightwood/crasherx)
+
+```
   dependencies {
 		implementation 'com.github.Knightwood:crasherx:Tag'
 	}
