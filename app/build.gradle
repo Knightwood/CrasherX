@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    compileSdkVersion 32
-    buildToolsVersion "33.0.0 rc3"
+    compileSdk 32
+
 
     defaultConfig {
         applicationId "com.kiylx.crasherx"
-        minSdkVersion 23
-        targetSdkVersion 32
+       minSdk 23
+        targetSdk 32
         versionCode 1
         versionName "1.0"
 
@@ -41,7 +41,4 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-}
-repositories {
-    mavenCentral()
 }
